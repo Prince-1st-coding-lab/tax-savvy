@@ -291,6 +291,15 @@ export function Calculator() {
               </div>
             ))}
           </dl>
+          <h3 className="mt-4 text-base font-semibold">How this was calculated</h3>
+          <dl className="mt-2 space-y-1">
+            {breakdown.map(([label, value]) => (
+              <div key={label} className="flex justify-between gap-4">
+                <dt className="text-muted-foreground">{label}</dt>
+                <dd className="num font-medium text-ink">{formatCurrency(value)}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
         <div className="rounded-2xl border border-border bg-surface p-5 shadow-card sm:p-6">
@@ -327,7 +336,7 @@ export function Calculator() {
           </p>
         </div>
 
-        <details className="rounded-2xl border border-border bg-surface p-5 text-sm shadow-card sm:p-6" open={false}>
+        <details className="no-print rounded-2xl border border-border bg-surface p-5 text-sm shadow-card sm:p-6" open={false}>
           <summary className="cursor-pointer font-semibold text-ink">How this was calculated</summary>
           <dl className="mt-4 space-y-2 text-muted-foreground">
             {breakdown.map(([label, value]) => (

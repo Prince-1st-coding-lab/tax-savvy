@@ -124,3 +124,54 @@
   letter-spacing: -0.03em;
 }
 
+
+/* Print / "Save as PDF" summary. Only the results column is printed. */
+@media print {
+  :root {
+    --background: #fff;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-summary {
+    display: block !important;
+    break-inside: avoid;
+  }
+
+  .print-area .shadow-card,
+  .print-area .shadow-lift {
+    box-shadow: none !important;
+  }
+
+  .print-area section,
+  .print-area > div {
+    break-inside: avoid;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}
