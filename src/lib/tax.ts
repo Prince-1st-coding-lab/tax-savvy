@@ -195,7 +195,7 @@ export const TAX_YEARS = [2025, 2026, 2027];
 export const TAX_YEAR = 2026;
 
 export function getYearConfig(year: number): YearConfig {
-  return YEAR_CONFIGS[year] ?? YEAR_CONFIGS[TAX_YEAR];
+  return YEAR_CONFIGS[year] ?? YEAR_2026;
 }
 
 export function incomeTaxFor(taxable: number, status: FilingStatus, year: number = TAX_YEAR) {
