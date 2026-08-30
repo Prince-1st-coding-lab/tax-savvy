@@ -20,6 +20,38 @@ const FAQS = [
     q: "Does this calculator include state taxes?",
     a: "No. It estimates federal self-employment tax and federal income tax only. Your state may require separate estimated payments, so budget for those on top of these numbers.",
   },
+  {
+    q: "Which tax year should I choose?",
+    a: "Pick the year the income is earned in, not the year you file. The selector switches the standard deduction, tax brackets, Social Security wage base, and the approximate quarterly due dates. Years marked \u201cprojected\u201d use inflation-adjusted estimates because the IRS has not published official figures for them yet.",
+  },
+  {
+    q: "What happens when my income passes the Social Security wage base?",
+    a: "The 12.4% Social Security portion of self-employment tax stops once your combined W-2 wages and self-employment earnings reach the annual wage base cap. Above that only the 2.9% Medicare portion continues, with no ceiling. If you enter W-2 wages, the calculator applies them against the cap first and warns you when you cross it.",
+  },
+  {
+    q: "What is the Additional Medicare Tax?",
+    a: "An extra 0.9% Medicare tax applies to combined wages and self-employment earnings above $200,000 for single and head-of-household filers, $250,000 for married filing jointly, and $125,000 for married filing separately. Unlike regular SE tax, this portion is not half-deductible. The calculator adds it automatically when you cross the threshold.",
+  },
+  {
+    q: "What if my business expenses are higher than my income?",
+    a: "You have a net loss. There is no self-employment tax to pay because net earnings are treated as $0, and the loss generally offsets your other income for income-tax purposes. The calculator flags this so you can double-check your numbers, since a paper loss year is unusual and draws more IRS attention.",
+  },
+  {
+    q: "Can I lower my quarterly payments?",
+    a: "Yes — track every legitimate business expense, contribute to a SEP-IRA or solo 401(k), and deduct self-employed health insurance premiums where eligible. Each deductible dollar reduces taxable income, and business expenses reduce self-employment tax too, often saving 30 cents or more per dollar.",
+  },
+  {
+    q: "What is the safe harbor rule?",
+    a: "If you pay at least 100% of last year's total tax through withholding and estimated payments (110% if your prior-year adjusted gross income was over $150,000), you generally avoid an underpayment penalty even if this year turns out far bigger than expected.",
+  },
+  {
+    q: "How do I actually pay the IRS?",
+    a: "Pay online through IRS Direct Pay from a bank account or EFTPS, or by card for a fee. Both take a couple of minutes. Select \u201cestimated tax\u201d and the correct tax year so the payment is credited properly.",
+  },
+  {
+    q: "Can I save or print my estimate?",
+    a: "Yes. Use the Download / print estimate button under the results to generate a clean one-page summary of your inputs, quarterly amounts, due dates, and the full calculation breakdown. Choose \u201cSave as PDF\u201d in the print dialog to keep a copy. Nothing is uploaded — the whole calculation runs in your browser.",
+  },
 ];
 
 const structuredData = {
