@@ -131,20 +131,22 @@
     --background: #fff;
   }
 
-  body * {
-    visibility: hidden;
+  /* Collapse everything that is not the results column or one of its ancestors. */
+  body :not(:has(.print-area)):not(.print-area):not(.print-area *) {
+    display: none !important;
   }
 
-  .print-area,
-  .print-area * {
-    visibility: visible;
+  body :has(.print-area) {
+    display: block !important;
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .print-area {
-    position: absolute;
-    inset: 0 auto auto 0;
+    display: block !important;
     width: 100%;
-    padding: 0;
   }
 
   .no-print {
@@ -161,9 +163,9 @@
     box-shadow: none !important;
   }
 
-  .print-area section,
   .print-area > div {
     break-inside: avoid;
+    margin-bottom: 12px;
   }
 
   * {
