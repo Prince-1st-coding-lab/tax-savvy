@@ -124,3 +124,63 @@
   letter-spacing: -0.03em;
 }
 
+
+/* Print / "Save as PDF" summary. Only the results column is printed. */
+@media print {
+  :root {
+    --background: #fff;
+  }
+
+  /* Collapse everything that is not the results column or one of its ancestors. */
+  body :not(:has(.print-area)):not(.print-area):not(.print-area *) {
+    display: none !important;
+  }
+
+  body :has(.print-area) {
+    display: block !important;
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html,
+  body,
+  .min-h-screen {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .print-area {
+    display: block !important;
+    width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-summary {
+    display: block !important;
+    break-inside: avoid;
+  }
+
+  .print-area .shadow-card,
+  .print-area .shadow-lift {
+    box-shadow: none !important;
+  }
+
+  .print-area > div {
+    break-inside: avoid;
+    margin-bottom: 12px;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}
